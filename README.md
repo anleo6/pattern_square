@@ -40,18 +40,14 @@ If you use gcc:
 ```sh
 $ gcc pattern_square.c -o pattern_square
 ```
-### Usage
+## Usage
 ```sh
 $ ./pattern_square
 Enter number from 1 to 1000:
 ```
-Enter any number and press 'Enter'. As example, if you entered 4, you will see:
+Enter any number, as example 2:
 ```
-4 4 4 4 4 4 4 
-4 3 3 3 3 3 4 
-4 3 2 2 2 3 4 
-4 3 2 1 2 3 4 
-4 3 2 2 2 3 4 
-4 3 3 3 3 3 4 
-4 4 4 4 4 4 4 
+2 2 2 
+2 1 2 
+2 2 2 
 ```
