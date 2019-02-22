@@ -17,7 +17,7 @@ int main()
     // columns
     
     int n = enter_number();
-    printf("\n\n");
+    printf("\n");
     
     // All flags became 1 after middle of columns or lines
     int col_flag = 0;
@@ -28,10 +28,8 @@ int main()
 
     for (int line = 0; line >= 0; ) {
         for (int col = 0; col >= 0; ) {
-            if (!col_flag)
-                if (col && line && col <= line) temp--;
-            else
-                if (line && col < line) temp++;
+            if (!col_flag && col && line && col <= line) temp--;
+            else if (col_flag && line && col < line) temp++;
             
             printf("%d ", temp);
             
@@ -54,6 +52,7 @@ int main()
         
         printf("\n");
     }
+
     return 0;
 }
     
@@ -62,10 +61,9 @@ int enter_number() {
     printf("Enter number from 1 to 1000: ");
     scanf("%d", &num);
     
-    if (n < 1 || n > 1000) {
-        printf("\nYou entered wrong number. It has to be from 1 to 1000.\n\n")
-        enter_number();
-    }
-    
-    return num;
+    if (num < 1 || num > 1000) {
+        printf("\nYou entered wrong number. It has to be from 1 to 1000.\n");
+        return enter_number();
+    } else return num;
+
 }
