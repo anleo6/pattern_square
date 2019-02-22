@@ -43,8 +43,8 @@ int main()
             else if (col_flag && line && (col < line)) print++;
             
             // Beautiful output
-            if (n < 11) printf("%2.d", print);
-            else if (n < 101) printf("%3.d", print);
+            if (n < 10) printf("%2.d", print);
+            else if (n < 100) printf("%3.d", print);
             else printf("%4.d", print);
             
             // In middle of line set flag
