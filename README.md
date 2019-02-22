@@ -16,7 +16,7 @@ In this problem, you need to print the pattern of the following form containing 
 ### Input Format
 The input will contain a single integer n.
 ### Constraints
-1 < n <= 1000
+1 < n < 1000
 ### Output Format
 Print the pattern mentioned in the problem statement.
 ### Sample Input
@@ -43,7 +43,7 @@ $ gcc pattern_square.c -o pattern_square
 ## Usage
 ```sh
 $ ./pattern_square
-Enter number from 1 to 1000:
+Enter number from 2 to 999:
 ```
 Enter any number, as example 2:
 ```
