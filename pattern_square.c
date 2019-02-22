@@ -5,6 +5,10 @@
 // ---------*--------- //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_SIZE 999
 
 // Function returns number entered by user
 int enter_number();
@@ -49,7 +53,7 @@ int main()
             
             // In middle of line set flag
             // to downgrade value of column
-            if (col == n - 1) col_flag = 1;
+            if (col == (n - 1)) col_flag = 1;
             
             if (col_flag) col--;
             else col++;
@@ -57,7 +61,7 @@ int main()
         
         // In middle of lines set flag
         // to downgrade value of line
-        if (line == n - 1) line_flag = 1;
+        if (line == (n - 1)) line_flag = 1;
         
         if (line_flag) line--;
         else line++;
@@ -74,13 +78,18 @@ int main()
 }
     
 int enter_number() {
-    int num = 0;
-    printf("Enter number from 2 to 999: ");
-    scanf("%d", &num);
-    
-    if (num < 1 || num > 999) {
-        printf("\nYou entered wrong number.\n");
-        return enter_number();
-    } else return num;
+	char *num = NULL;
+	num = (char*) malloc(MAX_SIZE * sizeof(char));
+    int answer;
 
+    printf("Enter number from 2 to %d: ", MAX_SIZE);
+    scanf("%s", num);
+    answer = atoi(num);
+    
+    free(num);
+    
+    if (answer < 2 || answer > MAX_SIZE) {
+        printf("\nYou entered the wrong number or symbol.\n");
+        return enter_number();
+    } else return answer;
 }
