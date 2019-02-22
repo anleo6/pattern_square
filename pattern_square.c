@@ -1,3 +1,9 @@
+// ---------*--------- //
+//   pattern_square    //
+//   pattern_square.c  //
+//   anleo6 - 2019     //
+// ---------*--------- //
+
 #include <stdio.h>
 
 // Function returns number entered by user
@@ -36,7 +42,10 @@ int main()
             if (!col_flag && col && line && (col <= line)) print--;
             else if (col_flag && line && (col < line)) print++;
             
-            printf("%d ", print);
+            // Beautiful output
+            if (n < 11) printf("%2.d", print);
+            else if (n < 101) printf("%3.d", print);
+            else printf("%4.d", print);
             
             // In middle of line set flag
             // to downgrade value of column
@@ -66,11 +75,11 @@ int main()
     
 int enter_number() {
     int num = 0;
-    printf("Enter number from 1 to 1000: ");
+    printf("Enter number from 2 to 999: ");
     scanf("%d", &num);
     
-    if (num < 1 || num > 1000) {
-        printf("\nYou entered wrong number. It has to be from 1 to 1000.\n");
+    if (num < 1 || num > 999) {
+        printf("\nYou entered wrong number.\n");
         return enter_number();
     } else return num;
 
