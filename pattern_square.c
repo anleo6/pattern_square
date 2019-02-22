@@ -6,7 +6,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 #define MAX_SIZE 999
 
@@ -78,8 +77,8 @@ int main()
 }
     
 int enter_number() {
-	char *num = NULL;
-	num = (char*) malloc(MAX_SIZE * sizeof(char));
+    char *num = NULL;
+    num = (char*) malloc(MAX_SIZE * sizeof(char));
     int answer;
 
     printf("Enter number from 2 to %d: ", MAX_SIZE);
