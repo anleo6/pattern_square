@@ -7,8 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_SIZE 999
-
 // Function returns number entered by user
 int enter_number();
 
@@ -78,17 +76,20 @@ int main()
     
 int enter_number() {
     char *num = NULL;
-    num = (char*) malloc(MAX_SIZE * sizeof(char));
+    num = (char*) malloc(4 * sizeof(char));
     int answer;
 
-    printf("Enter number from 2 to %d: ", MAX_SIZE);
-    scanf("%s", num);
+    printf("Enter number from 2 to 999: ");
+    // Save only first three symbols
+    scanf("%3s", num);
+    // Ignore non-integer symbols
     answer = atoi(num);
     
     free(num);
     
-    if (answer < 2 || answer > MAX_SIZE) {
+    if (answer < 2) {
         printf("\nYou entered the wrong number or symbol.\n");
-        return enter_number();
-    } else return answer;
+        exit(1);
+    } else 
+        return answer;
 }
